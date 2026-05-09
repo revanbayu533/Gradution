@@ -175,3 +175,18 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #db2777;
 }
+
+/* Interactive Floating Heart */
+.click-heart {
+    position: fixed;
+    color: #ec4899;
+    font-size: 1.5rem;
+    pointer-events: none;
+    z-index: 9999;
+    animation: float-up-heart 1.5s ease-out forwards;
+}
+
+@keyframes float-up-heart {
+    0% { transform: translateY(0) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+}

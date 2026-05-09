@@ -212,3 +212,21 @@ function updateFriendshipTimer() {
 setInterval(updateFriendshipTimer, 1000);
 // Panggil sekali agar tidak menunggu 1 detik saat load
 updateFriendshipTimer();
+
+// 9. Interactive Click Hearts
+document.addEventListener('click', function(e) {
+    // Jangan munculkan hati jika mengklik tombol atau link agar tidak mengganggu
+    if(e.target.closest('button') || e.target.closest('a')) return;
+
+    const heart = document.createElement('div');
+    heart.innerHTML = '💖';
+    heart.className = 'click-heart';
+    heart.style.left = (e.clientX - 10) + 'px';
+    heart.style.top = (e.clientY - 10) + 'px';
+    
+    document.body.appendChild(heart);
+    
+    setTimeout(() => {
+        heart.remove();
+    }, 1500);
+});
