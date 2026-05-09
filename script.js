@@ -9,14 +9,91 @@ lucide.createIcons();
 // 1. Typewriter Effect
 const nameToType = "Wanita Hebatku! 🌹";
 let i = 0;
-function typeWriter() {
-    const el = document.getElementById('typewriter');
-    if (el && i < nameToType.length) {
-        el.innerHTML += nameToType.charAt(i);
-        i++;
-        setTimeout(typeWriter, 120);
+
+// 4. Seamless Navigation (SPA-like)
+async function navigateToPage(event, url) {
+    if (event) event.preventDefault();
+    
+    try {
+        const response = await fetch(url);
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        
+        const newContent = doc.querySelector('#app-content').innerHTML;
+        const currentApp = document.querySelector('#app-content');
+        
+        // Simple fade transition
+        currentApp.style.opacity = '0';
+        
+        setTimeout(() => {
+            currentApp.innerHTML = newContent;
+            window.history.pushState({}, '', url);
+            currentApp.style.opacity = '1';
+            
+            // Re-initialize all scripts
+            reinitScripts();
+            window.scrollTo(0, 0);
+        }, 300);
+
+    } catch (error) {
+        console.error('Navigation failed:', error);
+        window.location.href = url; // Fallback to normal navigation
     }
 }
+
+function reinitScripts() {
+    // Re-init Lucide Icons
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+    
+    // Re-init AOS
+    if (typeof AOS !== 'undefined') {
+        AOS.refreshHard();
+        AOS.init({ duration: 1500, once: true });
+    }
+    
+    // Re-init Typewriter (if on index)
+    const typewriterElement = document.getElementById('typewriter');
+    if (typewriterElement) {
+        initTypewriter();
+    }
+    
+    // Re-init Timer (if on index)
+    if (document.getElementById('timer-days')) {
+        setInterval(updateFriendshipTimer, 1000);
+        updateFriendshipTimer();
+    }
+}
+
+// Handle Browser Back/Forward
+window.addEventListener('popstate', () => {
+    window.location.reload(); // Simple way to handle popstate for now
+});
+
+// Initial CSS for fade
+document.getElementById('app-content').style.transition = 'opacity 0.3s ease';
+
+// Move initTypewriter to a function so it can be re-called
+function initTypewriter() {
+    const typewriterElement = document.getElementById('typewriter');
+    if (!typewriterElement) return;
+    
+    const text = "Cia Smart Girl-ku! 🌹";
+    let i = 0;
+    typewriterElement.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            typewriterElement.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 150);
+        }
+    }
+    type();
+}
+
+// Start Typewriter on first load
+window.addEventListener('load', initTypewriter);
 
 // 2. Optimized Rose Petals Rain
 function createRosePetal() {

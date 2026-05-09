@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Special Memories for Cia</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Pinyon+Script&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Pinyon+Script&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -14,123 +17,170 @@
             overflow-x: hidden;
             font-family: 'Cormorant Garamond', serif;
         }
+
         .serif {
             font-family: 'Cormorant Garamond', serif;
         }
+
         .letter-font {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.4rem;
             line-height: 1.8;
         }
+
         .signature-font {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 600;
             letter-spacing: 0.5em;
             text-transform: uppercase;
         }
+
         .letter-bg {
             background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://www.transparenttextures.com/patterns/paper-fibers.png');
         }
+
         .masonry-grid {
-            columns: 1;
-            column-gap: 1.5rem;
+            columns: 2;
+            column-gap: 1rem;
         }
-        @media (min-width: 768px) { .masonry-grid { columns: 2; } }
-        @media (min-width: 1024px) { .masonry-grid { columns: 3; } }
-        
+
+        @media (min-width: 768px) {
+            .masonry-grid {
+                columns: 3;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                columns: 4;
+            }
+        }
+
         .masonry-item {
             break-inside: avoid;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
+
 <body class="font-['Plus_Jakarta_Sans']">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-difference">
-        <a href="index.html" class="text-white hover:text-pink-200 transition flex items-center gap-2">
-            <i data-lucide="arrow-left"></i> Kembali
-        </a>
-    </nav>
+    <div id="app-content">
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-difference">
+            <a href="index.html" onclick="navigateToPage(event, 'index.html')"
+                class="text-white hover:text-pink-200 transition flex items-center gap-2">
+                <i data-lucide="arrow-left"></i> Kembali
+            </a>
+        </nav>
 
-    <!-- Header Section -->
-    <header class="h-screen flex items-center justify-center text-center px-6">
-        <div data-aos="zoom-out" data-aos-duration="2000">
-            <span class="tag-pink mb-4 inline-block">Chapter Two</span>
-            <h1 class="serif text-6xl md:text-8xl text-pink-900 mb-6 italic">A Letter For You</h1>
-            <p class="text-pink-800/60 text-lg max-w-xl mx-auto font-light">
-                Setiap kata yang tertulis di sini adalah bisikan jujur dari hatiku, untukmu yang paling berharga.
+        <!-- Header Section -->
+        <header class="h-screen flex items-center justify-center text-center px-6">
+            <div data-aos="zoom-out" data-aos-duration="2000">
+                <span class="tag-pink mb-4 inline-block">Chapter Two</span>
+                <h1 class="serif text-6xl md:text-8xl text-pink-900 mb-6 italic">A Letter For You</h1>
+                <p class="text-pink-800/60 text-lg max-w-xl mx-auto font-light">
+                    Setiap kata yang tertulis di sini adalah bisikan jujur dari hatiku, untukmu yang paling berharga.
+                </p>
+            </div>
+        </header>
+
+        <!-- The Letter Section -->
+        <section class="max-w-4xl mx-auto px-6 py-20">
+            <div class="letter-bg p-12 md:p-20 rounded-[3rem] shadow-2xl relative" data-aos="fade-up">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-pink-200/30 rounded-full blur-3xl"></div>
+
+                <div class="letter-font text-pink-900 space-y-8 italic">
+                    <p>Dear Cia,</p>
+                    <p>
+                        Aku ingin kamu tahu bahwa di setiap pencapaianmu, ada seseorang yang diam-diam tersenyum paling
+                        lebar karena bangga melihatmu. Kelulusanmu hari ini adalah awal perjalanan panjangmu , tapi
+                        tentang ketangguhanmu menghadapi hari-hari sulit yang mungkin orang lain tidak tahu.
+                    </p>
+                    <p>
+                        Meskipun kamu bukan juara satu di sekolah maupun di kelas, tapi bagiku, caramu
+                        berjuang agar tetap berdiri tegak dan melawan penyakit yg diderita oleh kamu adalah kemenangan
+                        yang paling luar biasa yang pernah aku saksikan. Kamu selalu menjadi pemenang utama di hatiku.
+                    </p>
+                    <p>
+                        Kamu adalah definisi dari keindahan yang sesungguhnya—bukan hanya dari wajahmu yang selalu
+                        menawan, tapi dari caramu memperlakukan dunia dengan kelembutan.
+                    </p>
+                    <p>
+                        Terima kasih telah mengizinkanku menjadi bagian dari perjalananmu. Aku tidak sabar melihat
+                        babak-babak hebat lainnya yang akan kamu lalui, dan aku berharap bisa selalu ada di sisimu untuk
+                        merayakannya.
+                    </p>
+                    <p class="text-right mt-16 signature-font text-xl text-pink-600">
+                        R 23 JULY 09
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Masonry Memories -->
+        <section class="max-w-6xl mx-auto px-6 py-32">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="serif text-4xl text-pink-900 mb-4">Captured Moments</h2>
+                <div class="h-1 w-20 bg-pink-300 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="masonry-grid">
+                <div class="masonry-item" data-aos="fade-up">
+                    <img src="IMG-20260411-WA0031.jpg"
+                        class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
+                </div>
+                <div class="masonry-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="IMG-20260411-WA0036.jpg"
+                        class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
+                </div>
+                <div class="masonry-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="IMG-20260422-WA0027.jpg"
+                        class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
+                </div>
+                <div class="masonry-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="IMG-20260509-WA0003.jpeg"
+                        class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
+                </div>
+                <div class="masonry-item" data-aos="fade-up" data-aos-delay="400">
+                    <img src="IMG-20260425-WA0009.jpg"
+                        class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
+                </div>
+                <div class="masonry-item" data-aos="fade-up" data-aos-delay="500">
+                    <img src="IMG-20260509-WA0002.jpg"
+                        class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-20 text-center bg-white">
+            <p class="serif text-2xl text-pink-900 mb-4 italic">Semua akan indah pada waktunya, <br>terutama bersamamu.
             </p>
-        </div>
-    </header>
+            <p class="text-pink-400 text-sm tracking-widest uppercase">&copy; 2025 For Cia</p>
+        </footer>
+    </div>
 
-    <!-- The Letter Section -->
-    <section class="max-w-4xl mx-auto px-6 py-20">
-        <div class="letter-bg p-12 md:p-20 rounded-[3rem] shadow-2xl relative" data-aos="fade-up">
-            <div class="absolute -top-10 -right-10 w-32 h-32 bg-pink-200/30 rounded-full blur-3xl"></div>
-            
-            <div class="letter-font text-pink-900 space-y-8 italic">
-                <p>Dear Cia,</p>
-                <p>
-                    Aku ingin kamu tahu bahwa di setiap pencapaianmu, ada seseorang yang diam-diam tersenyum paling lebar karena bangga melihatmu. Kelulusanmu hari ini bukan hanya tentang gelar, tapi tentang ketangguhanmu menghadapi hari-hari sulit yang mungkin orang lain tidak tahu.
-                </p>
-                <p>
-                    Meskipun mungkin kamu merasa bukan "juara satu" di mata dunia, bagiku, caramu berjuang dan tetap berdiri tegak adalah kemenangan yang paling luar biasa yang pernah aku saksikan. Kamu selalu menjadi pemenang utama di hatiku.
-                </p>
-                <p>
-                    Kamu adalah definisi dari keindahan yang sesungguhnya—bukan hanya dari wajahmu yang selalu menawan, tapi dari caramu memperlakukan dunia dengan kelembutan.
-                </p>
-                <p>
-                    Terima kasih telah mengizinkanku menjadi bagian dari perjalananmu. Aku tidak sabar melihat babak-babak hebat lainnya yang akan kamu lalui, dan aku berharap bisa selalu ada di sisimu untuk merayakannya.
-                </p>
-                <p class="text-right mt-16 signature-font text-xl text-pink-600">
-                    R 23 JULY 09
-                </p>
-            </div>
-        </div>
-    </section>
+    <!-- Music Control -->
+    <div class="fixed bottom-8 right-8 z-[100]">
+        <button onclick="toggleMusic()"
+            class="w-14 h-14 bg-white/80 backdrop-blur-md rounded-full shadow-xl flex items-center justify-center text-pink-500 hover:scale-110 transition-all border border-pink-100">
+            <i id="musicIcon" data-lucide="music-2"></i>
+        </button>
+    </div>
 
-    <!-- Masonry Memories -->
-    <section class="max-w-6xl mx-auto px-6 py-32">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="serif text-4xl text-pink-900 mb-4">Captured Moments</h2>
-            <div class="h-1 w-20 bg-pink-300 mx-auto rounded-full"></div>
-        </div>
-
-        <div class="masonry-grid">
-            <div class="masonry-item" data-aos="fade-up">
-                <img src="IMG-20260411-WA0031.jpg" class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
-            </div>
-            <div class="masonry-item" data-aos="fade-up" data-aos-delay="100">
-                <img src="IMG-20260411-WA0036.jpg" class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
-            </div>
-            <div class="masonry-item" data-aos="fade-up" data-aos-delay="200">
-                <img src="IMG-20260422-WA0027.jpg" class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
-            </div>
-            <div class="masonry-item" data-aos="fade-up" data-aos-delay="300">
-                <img src="IMG-20260509-WA0003.jpeg" class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
-            </div>
-            <div class="masonry-item" data-aos="fade-up" data-aos-delay="400">
-                <img src="IMG-20260425-WA0009.jpg" class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
-            </div>
-            <div class="masonry-item" data-aos="fade-up" data-aos-delay="500">
-                <img src="IMG-20260509-WA0002.jpg" class="w-full rounded-3xl shadow-lg hover:scale-[1.02] transition duration-500" alt="Memory">
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-20 text-center bg-white">
-        <p class="serif text-2xl text-pink-900 mb-4 italic">Semua akan indah pada waktunya, <br>terutama bersamamu.</p>
-        <p class="text-pink-400 text-sm tracking-widest uppercase">&copy; 2025 For Cia</p>
-    </footer>
+    <audio id="bgMusic" loop>
+        <source src="Nadhif Basalamah - bergema sampai selamanya (Official Lyric Video).mp3" type="audio/mp3">
+    </audio>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
     <script>
         AOS.init({ duration: 1500, once: true });
         lucide.createIcons();
     </script>
 </body>
+
 </html>
